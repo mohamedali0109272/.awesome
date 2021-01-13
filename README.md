@@ -1,11 +1,9 @@
 
-<p align='center'>
-	<img alt='awesome' src='https://raw.githubusercontent.com/mohamedali0109272/.awesome/master/awesome.png'/>
-	<br/>
+![Alt text](awesome.png?raw=true "Title")
 	<b>
 		Welcome to the awesome dotfiles!
 	</b>
-</p>
+
 
 ### Starring
 
