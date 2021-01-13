@@ -72,7 +72,7 @@ local profile_imagebox = wibox.widget {
 }
 
 local clock_format = '<span font="Inter Bold 52">%H:%M</span>'
-if not locker_config.military_clock then
+if  locker_config.military_clock then
 	clock_format = '<span font="Inter Bold 52">%I:%M %p</span>'
 end
 

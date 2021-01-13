@@ -108,7 +108,7 @@ local volume_slider_osd = wibox.widget {
 
 local osd_height = dpi(100)
 local osd_width = dpi(300)
-local osd_margin = dpi(10)
+local osd_margin = dpi(500)
 
 screen.connect_signal(
 	'request::desktop_decoration',

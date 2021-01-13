@@ -195,53 +195,6 @@ client.connect_signal(
 
 			if c.class == 'kitty' then
 				create_vertical_bar(c, 'left', '#00000099', beautiful.titlebar_size)
-
-			elseif c.class == 'firefox' then
-				create_vertical_bar(c, 'left', beautiful.background, beautiful.titlebar_size)
-
-			elseif c.class == 'XTerm' or c.class == 'UXTerm' then
-				create_horizontal_bar(c, 'top',
-					beautiful.xresources.get_current_theme().background, beautiful.titlebar_size)
-
-			elseif c.class == 'ark' or c.class == 'dolphin' then
-				create_vertical_bar(c, 'left', '#00000099', beautiful.titlebar_size)
-
-			elseif c.instance == 'transmission-qt' then
-				create_vertical_bar(c, 'left', '#00000099', beautiful.titlebar_size)
-
-			elseif c.class == 'Gimp-2.10' or c.class == 'Inkscape' then
-				create_vertical_bar(c, 'left',
-					beautiful.gtk.get_theme_variables().bg_color, beautiful.titlebar_size)
-
-			elseif c.class == 'Com.github.johnfactotum.Foliate' then
-				create_vertical_bar(c, 'left',
-					beautiful.gtk.get_theme_variables().bg_color, beautiful.titlebar_size)
-
-			elseif c.class == 'Arandr' then
-				create_vertical_bar(c, 'left',
-					beautiful.gtk.get_theme_variables().bg_color, beautiful.titlebar_size)
-
-			elseif c.class == 'Ettercap' then
-				create_vertical_bar(c, 'left',
-					beautiful.gtk.get_theme_variables().base_color, beautiful.titlebar_size)
-
-			elseif c.class == 'Google-chrome' or c.class == 'Chromium' then
-				create_vertical_bar(c, 'left',
-					beautiful.gtk.get_theme_variables().base_color, beautiful.titlebar_size)
-				
-			elseif c.class == 'TelegramDesktop' then
-				create_vertical_bar(c, 'left', '#17212b', beautiful.titlebar_size)
-
-			elseif c.class == 'Kvantum Manager' then
-				create_vertical_bar(c, 'left', '#00000099', beautiful.titlebar_size)
-
-			elseif c.class == 'qt5ct' then
-				create_vertical_bar(c, 'left', '#00000099', beautiful.titlebar_size)
-
-			elseif c.class == 'Nemo' then
-				create_horizontal_bar(c, 'top',
-					beautiful.gtk.get_theme_variables().base_color, beautiful.titlebar_size)
-
 			else
 				create_vertical_bar(c, 'left', beautiful.background, '20')
 			end

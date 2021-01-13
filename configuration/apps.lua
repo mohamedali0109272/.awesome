@@ -73,7 +73,7 @@ return {
 		]],
 
 		-- You can add more start-up applications here
-		'nm-applet --indicator'
+		'nm-applet --no-agent'
 	},
 
 	-- List of binaries/shell scripts that will execute for a certain task
