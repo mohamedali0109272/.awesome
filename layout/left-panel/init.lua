@@ -14,9 +14,9 @@ local left_panel = function(screen)
 		screen = screen,
 		width = action_bar_width,
 		type = 'dock',
-		height = screen.geometry.height,
-		x = screen.geometry.x,
-		y = screen.geometry.y,
+		height = screen.geometry.height - 20,
+		x = screen.geometry.x + 10,
+		y = screen.geometry.y + 10,
 		ontop = true,
 		shape = gears.shape.rectangle,
 		bg = beautiful.background,
@@ -26,7 +26,7 @@ local left_panel = function(screen)
 	panel.opened = false
 
 	panel:struts {
-		left = action_bar_width
+		left = action_bar_width + 10
 	}
 
 	local backdrop = wibox {
