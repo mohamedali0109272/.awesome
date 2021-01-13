@@ -10,7 +10,7 @@
 - [`archlinux`](https://www.archlinux.org/download/) as distribution
 - [`fish`](https://fishshell.com/) as shell
 - [`awesomewm`](https://awesomewm.org) as window manager
-- [`st`](https://github.com/kovidgoyal/kitty) as terminal emulator
+- [`st`](https://st.suckless.org/) as terminal emulator
 - [`picom-git`](https://github.com/yshui/picom) as compositor
 - [`rofi`](https://github.com/davatorium/rofi) as application launcher
 - [`inter-font`](https://github.com/rsms/inter/) as the setup font
