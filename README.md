@@ -1,8 +1,8 @@
 
-![Alt text](awesome.png?raw=true "Title")
-	<b>
+![Alt text](awesome.png?raw=true)
+<b>
 		Welcome to the awesome dotfiles!
-	</b>
+</b>
 
 
 ### Starring
