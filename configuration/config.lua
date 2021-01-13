@@ -46,14 +46,14 @@ return {
 			-- Mic level
 			mic_level = '20',
 			-- FPS
-			fps = '30'
+			fps = '60'
 		}
 	},
 
 	module = {
 		auto_start = {
 			-- Will create notification if true
-			debug_mode = true
+			debug_mode = false
 		},
 
 		dynamic_wallpaper = {
@@ -95,7 +95,7 @@ return {
 			-- Will look for this image file under 'bg_dir'
 			bg_image = 'locksreen-bg.jpg',
 			-- Blur lockscreen background
-			blur_background = false,
+			blur_background = true,
 			-- Blurred/filtered background image path (No reason to change this)
 			tmp_wall_dir = '/tmp/awesomewm/' .. os.getenv('USER') .. '/'
 		}

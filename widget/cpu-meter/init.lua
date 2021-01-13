@@ -26,7 +26,7 @@ local slider = wibox.widget {
 }
 
 watch(
-	[[bash -c "
+	[[sh -c "
 	cat /proc/stat | grep '^cpu '
 	"]],
 	10,

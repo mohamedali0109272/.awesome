@@ -11,7 +11,7 @@ local top_panel = function(s, offset)
 
 	local offsetx = 0
 	if offset == true then
-		offsetx = dpi(45)
+		offsetx = dpi(40)
 	end
 
 	local panel = wibox
@@ -20,7 +20,7 @@ local top_panel = function(s, offset)
 		screen = s,
 		type = 'dock',
 		height = dpi(28),
-		width = s.geometry.width - offsetx,
+		width = s.geometry.width  - offsetx,
 		x = s.geometry.x + offsetx,
 		y = s.geometry.y,
 		stretch = false,
@@ -48,7 +48,7 @@ local top_panel = function(s, offset)
 		base_size = dpi(20),
 		horizontal = true,
 		screen = 'primary',
-		widget = wibox.widget.systray
+		widget = wibox.widget.systray({fg='#00000000'})
 	}
 
 	local clock 			= require('widget.clock')(s)
@@ -74,7 +74,7 @@ local top_panel = function(s, offset)
 		clock,
 		{
 			layout = wibox.layout.fixed.horizontal,
-			spacing = dpi(5),
+			spacing = dpi(0.5),
 			{
 				s.systray,
 				margins = dpi(5),

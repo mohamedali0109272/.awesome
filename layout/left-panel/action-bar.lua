@@ -16,7 +16,7 @@ return function(s, panel, action_bar_width)
 			resize = true,
 			widget = wibox.widget.imagebox
 		},
-		margins = dpi(10),
+		margins = dpi(2),
 		widget = wibox.container.margin
 	}
 	
@@ -63,7 +63,7 @@ return function(s, panel, action_bar_width)
 		{
 			require('widget.search-apps')(),
 			tag_list(s),
-			require("widget.xdg-folders")(),
+		--	require("widget.xdg-folders")(),
 			layout = wibox.layout.fixed.vertical,
 		},
 		nil,

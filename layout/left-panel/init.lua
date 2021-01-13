@@ -7,8 +7,8 @@ local apps = require('configuration.apps')
 
 local left_panel = function(screen)
 	
-	local action_bar_width = dpi(45)
-	local panel_content_width = dpi(350)
+	local action_bar_width = dpi(40)
+	local panel_content_width = dpi(300)
 
 	local panel = wibox {
 		screen = screen,
