@@ -69,7 +69,7 @@ local create_vertical_bar = function(c, pos, bg, size)
 				spacing = dpi(7),
 				layout  = wibox.layout.fixed.vertical
 			},
-			margins = dpi(10),
+			margins = dpi(3),
 			widget = wibox.container.margin
 		},
 		{
@@ -83,7 +83,7 @@ local create_vertical_bar = function(c, pos, bg, size)
 				spacing = dpi(7),
 				layout  = wibox.layout.fixed.vertical
 			},
-			margins = dpi(10),
+			margins = dpi(5),
 			widget = wibox.container.margin
 		},
 		layout = wibox.layout.align.vertical
@@ -243,7 +243,7 @@ client.connect_signal(
 					beautiful.gtk.get_theme_variables().base_color, beautiful.titlebar_size)
 
 			else
-				create_vertical_bar(c, 'left', beautiful.background, beautiful.titlebar_size)
+				create_vertical_bar(c, 'left', beautiful.background, '20')
 			end
 
 		elseif c.type == 'dialog' then
