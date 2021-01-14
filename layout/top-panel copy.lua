@@ -11,7 +11,7 @@ local top_panel = function(s, offset)
 
 	local offsetx = 0
 	if offset == true then
-		offsetx = dpi(1050)
+		offsetx = dpi(60)
 	end
 
 	local panel = wibox
@@ -20,7 +20,7 @@ local top_panel = function(s, offset)
 		screen = s,
 		type = 'dock',
 		height = dpi(28),
-		width = s.geometry.width  - offsetx - 10,
+		width = s.geometry.width  - offsetx - 1110,
 		x = s.geometry.x + offsetx,
 		y = s.geometry.y + 10,
 		stretch = false,
@@ -28,23 +28,6 @@ local top_panel = function(s, offset)
 		fg = beautiful.fg_normal,
 		--margins = dpi(10)
 	}
-
-
-	--local panel = wibox
-	--{
-	--	ontop = true,
-	--	screen = s,
-	--	type = 'dock',
-	--	height = dpi(28),
-	--	width = s.geometry.width  - offsetx - 10,
-	--	x = s.geometry.x + offsetx,
-	--	y = s.geometry.y + 10,
-	--	stretch = false,
-	--	bg = beautiful.background,
-	--	fg = beautiful.fg_normal,
-	--	--margins = dpi(10)
-	--}
-
 
 	panel:struts
 	{
@@ -69,9 +52,9 @@ local top_panel = function(s, offset)
 		widget = wibox.widget.systray({fg='#00000000'})
 	}
 
-	--local clock 			= require('widget.clock')(s)
+	local clock 			= require('widget.clock')(s)
 	local layout_box 		= require('widget.layoutbox')(s)
-	--local add_button 		= require('widget.open-default-app')(s)
+	local add_button 		= require('widget.open-default-app')(s)
 	s.tray_toggler  		= require('widget.tray-toggle')
 	s.updater 				= require('widget.package-updater')()
 	s.screen_rec 			= require('widget.screen-recorder')()
@@ -83,13 +66,13 @@ local top_panel = function(s, offset)
 
 	panel : setup {
 		layout = wibox.layout.align.horizontal,
-		expand = 'true',
+		expand = 'none',
 		{
 			layout = wibox.layout.fixed.horizontal,
-			--task_list(s),
-			--add_button
+			task_list(s),
+			add_button
 		}, 
-		--clock,
+		clock,
 		{
 			layout = wibox.layout.fixed.horizontal,
 			spacing = dpi(0.5),
