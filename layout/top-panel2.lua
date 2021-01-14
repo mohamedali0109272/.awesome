@@ -11,7 +11,7 @@ local top_panel2 = function(s, offset)
 
 	local offsetx = 0
 	if offset == true then
-		offsetx = dpi(60)
+		offsetx = dpi(50)
 	end
 
 	local panel = wibox
@@ -22,7 +22,7 @@ local top_panel2 = function(s, offset)
 		height = dpi(28),
 		width = s.geometry.width  - offsetx - 900,
 		x = s.geometry.x + offsetx,
-		y = s.geometry.y + 10,
+		y = s.geometry.y + 5,
 		stretch = false,
 		bg = beautiful.background,
 		fg = beautiful.fg_normal,
@@ -32,7 +32,7 @@ local top_panel2 = function(s, offset)
 
 	panel:struts
 	{
-		top = dpi(38)
+		top = dpi(33)
 	}
 
 	panel:connect_signal(

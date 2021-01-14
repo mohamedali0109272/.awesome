@@ -45,7 +45,7 @@ local locked_tag = nil
 local uname_text = wibox.widget {
 	id = 'uname_text',
 	markup = '$USER',
-	font = 'Inter Bold 12',
+	font = 'Inter Bold 30',
 	align = 'center',
 	valign = 'center',
 	widget = wibox.widget.textbox
@@ -65,8 +65,8 @@ local profile_imagebox = wibox.widget {
 	id = 'user_icon',
 	image = widget_icon_dir .. 'default.svg',
 	resize = true,
-	forced_height = dpi(130),
-	forced_width = dpi(130),
+	forced_height = dpi(200),
+	forced_width = dpi(200),
 	clip_shape = gears.shape.circle,
 	widget = wibox.widget.imagebox
 }
@@ -154,16 +154,16 @@ local date = wibox.widget {
 
 local circle_container = wibox.widget {
 	bg = beautiful.transparent,
-	forced_width = dpi(140),
-	forced_height = dpi(140),
+	forced_width = dpi(210),
+	forced_height = dpi(210),
 	shape = gears.shape.circle,
 	widget = wibox.container.background
 }
 
 local locker_arc = wibox.widget {
 	bg = beautiful.transparent,
-	forced_width = dpi(140),
-	forced_height = dpi(140),
+	forced_width = dpi(210),
+	forced_height = dpi(210),
 	shape = function(cr, width, height)
 		gears.shape.arc(cr, width, height, dpi(5), 0, (math.pi / 2), false, false)
 	end,

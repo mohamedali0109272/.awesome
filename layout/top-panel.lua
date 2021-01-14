@@ -22,7 +22,7 @@ local top_panel = function(s, offset)
 		height = dpi(28),
 		width = s.geometry.width  - offsetx - 10,
 		x = s.geometry.x + offsetx,
-		y = s.geometry.y + 10,
+		y = s.geometry.y + 5,
 		stretch = false,
 		bg = beautiful.background,
 		fg = beautiful.fg_normal,
@@ -48,7 +48,7 @@ local top_panel = function(s, offset)
 
 	panel:struts
 	{
-		top = dpi(38)
+		top = dpi(33)
 	}
 
 	panel:connect_signal(
@@ -83,7 +83,7 @@ local top_panel = function(s, offset)
 
 	panel : setup {
 		layout = wibox.layout.align.horizontal,
-		expand = 'true',
+		expand = 'false',
 		{
 			layout = wibox.layout.fixed.horizontal,
 			--task_list(s),

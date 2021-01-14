@@ -7,7 +7,7 @@ panel_visible = false
 local right_panel = function(s)
 
 	-- Set right panel geometry
-	local panel_width = dpi(350)
+	local panel_width = dpi(320)
 	local panel_x = s.geometry.x + s.geometry.width - panel_width
 
 	local panel = wibox {
@@ -16,9 +16,9 @@ local right_panel = function(s)
 		visible = false,
 		type = 'dock',
 		width = panel_width,
-		height = s.geometry.height,
-		x = panel_x,
-		y = s.geometry.y,
+		height = s.geometry.height - 10 ,
+		x = panel_x - 5,
+		y = s.geometry.y + 5,
 		bg = beautiful.background,
 		fg = beautiful.fg_normal
 	}
