@@ -45,13 +45,13 @@ local top_panel2 = function(s, offset)
 		end
 	)
 
-	s.systray = wibox.widget {
-		visible = false,
-		base_size = dpi(20),
-		horizontal = true,
-		screen = 'primary',
-		widget = wibox.widget.systray({fg='#00000000'})
-	}
+	--s.systray = wibox.widget {
+	--	visible = false,
+	--	base_size = dpi(20),
+	--	horizontal = true,
+	--	screen = 'primary',
+	--	widget = wibox.widget.systray({fg='#00000000'})
+	--}
 
 	--local clock 			= require('widget.clock')(s)
 	local layout_box 		= require('widget.layoutbox')(s)

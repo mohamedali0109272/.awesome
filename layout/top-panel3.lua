@@ -11,7 +11,7 @@ local top_panel2 = function(s, offset)
 
 	local offsetx = 0
 	if offset == true then
-		offsetx = dpi(1000)
+		offsetx = dpi(665)
 	end
 
 	local panel = wibox
@@ -20,9 +20,9 @@ local top_panel2 = function(s, offset)
 		screen = s,
 		type = 'dock',
 		height = dpi(28),
-		width = s.geometry.width  - offsetx - 600,
+		width = s.geometry.width  - offsetx - 625,
 		x = s.geometry.x + offsetx,
-		y = s.geometry.y + 10,
+		y = s.geometry.y + 5,
 		stretch = false,
 		bg = beautiful.background,
 		fg = beautiful.fg_normal,
@@ -45,13 +45,13 @@ local top_panel2 = function(s, offset)
 		end
 	)
 
-	s.systray = wibox.widget {
-		visible = false,
-		base_size = dpi(20),
-		horizontal = true,
-		screen = 'primary',
-		widget = wibox.widget.systray({fg='#00000000'})
-	}
+	--s.systray = wibox.widget {
+	--	visible = false,
+	--	base_size = dpi(20),
+	--	horizontal = true,
+	--	screen = 'primary',
+	--	widget = wibox.widget.systray({fg='#00000000'})
+	--}
 
 	local clock 			= require('widget.clock')(s)
 	--local layout_box 		= require('widget.layoutbox')(s)
@@ -72,7 +72,7 @@ local top_panel2 = function(s, offset)
 		--	layout = wibox.layout.fixed.horizontal,
 		--	task_list(s),
 		--	add_button
-		--}, 
+		--}--, 
 		clock,
 		--{
 		--	layout = wibox.layout.fixed.horizontal,

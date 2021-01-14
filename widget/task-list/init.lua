@@ -66,7 +66,7 @@ local function list_update(w, buttons, label, data, objects)
 				-- 4, 8 ,12 ,12 -- close button
 				cb,
 				left = dpi(4),
-				right = dpi(8),
+				right = dpi(4),
 				top = dpi(4),
 				bottom = dpi(4),
 				widget = wibox.container.margin
@@ -143,8 +143,8 @@ local function list_update(w, buttons, label, data, objects)
 		else
 			-- Truncate when title is too long
 			local text_only = text:match('>(.-)<')
-			if (utf8.len(text_only) > 24) then
-				text = text:gsub('>(.-)<', '>' .. string.sub(text_only, 1, utf8.offset(text_only,22) - 1) .. '...<')
+			if (utf8.len(text_only) > 0) then
+				text = text:gsub('>(.-)<', '>' .. string.sub(text_only, 1, utf8.offset(text_only,1) - 1) .. '<')
 				tt:set_text(text_only)
 				tt:add_to_object(tb)
 			else
