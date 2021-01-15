@@ -7,11 +7,15 @@ local dpi = beautiful.xresources.apply_dpi
 local clickable_container = require('widget.clickable-container')
 local task_list = require('widget.task-list')
 
+local filesystem = require('gears.filesystem')
+local config_dir = filesystem.get_configuration_dir()
+
+
 local top_panel2 = function(s, offset)
 
 	local offsetx = 0
 	if offset == true then
-		offsetx = dpi(665)
+		offsetx = dpi(590) --dpi(660)
 	end
 
 	local panel = wibox
@@ -20,11 +24,11 @@ local top_panel2 = function(s, offset)
 		screen = s,
 		type = 'dock',
 		height = dpi(28),
-		width = s.geometry.width  - offsetx - 625,
+		width = s.geometry.width  - offsetx - 525, --625,
 		x = s.geometry.x + offsetx,
 		y = s.geometry.y + 5,
 		stretch = false,
-		bg = beautiful.background,
+		bg = beautiful.background, 
 		fg = beautiful.fg_normal,
 		--margins = dpi(10)
 	}
@@ -54,6 +58,8 @@ local top_panel2 = function(s, offset)
 	--}
 
 	local clock 			= require('widget.clock')(s)
+	--local myupdates = awful.widget.watch("sh -c /home/memo/autostart.sh",1)
+	local status = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status.sh',1)
 	--local layout_box 		= require('widget.layoutbox')(s)
 	--local add_button 		= require('widget.open-default-app')(s)
 	--s.tray_toggler  		= require('widget.tray-toggle')
@@ -68,12 +74,14 @@ local top_panel2 = function(s, offset)
 	panel : setup {
 		layout = wibox.layout.align.horizontal,
 		expand = 'none',
-		--{
-		--	layout = wibox.layout.fixed.horizontal,
+		{
+			layout = wibox.layout.fixed.horizontal,
+			clock,
 		--	task_list(s),
 		--	add_button
-		--}--, 
-		clock,
+			status
+		}--, 
+		--clock,
 		--{
 		--	layout = wibox.layout.fixed.horizontal,
 		--	spacing = dpi(0.5),
