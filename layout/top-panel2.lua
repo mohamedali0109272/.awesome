@@ -67,7 +67,7 @@ local top_panel2 = function(s, offset)
 
 	panel : setup {
 		layout = wibox.layout.align.horizontal,
-		expand = 'none',
+		expand = 'true',
 		{
 			layout = wibox.layout.fixed.horizontal,
 			task_list(s),

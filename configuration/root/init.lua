@@ -82,3 +82,7 @@ root.buttons(
 		)
 	)
 )
+
+
+
+-- root.keys(awful.key({},'s',function () awful.spawn('st',false) end))

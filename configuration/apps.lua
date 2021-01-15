@@ -10,9 +10,9 @@ return {
 		-- Default web browser
 		web_browser = 'chromium',
 		-- Default text editor
-		text_editor = 'subl3',
+		text_editor = 'code',--subl3',
 		-- Default file manager
-		file_manager = 'thunar',
+		file_manager = 'dolphin',
 		-- Default media player
 		multimedia = 'vlc',
 		-- Default game, can be a launcher like steam
@@ -34,7 +34,7 @@ return {
 		-- Default locker
 		lock = 'awesome-client "awesome.emit_signal(\'module::lockscreen_show\')"',
 		-- Default quake terminal
-		quake = 'st --name QuakeTerminal',
+		quake = 'st -n QuakeTerminal',
 		-- Default rofi global menu
 		rofi_global = 'rofi -dpi ' .. screen.primary.dpi .. 
 							' -show "Global Search" -modi "Global Search":' .. config_dir .. 
