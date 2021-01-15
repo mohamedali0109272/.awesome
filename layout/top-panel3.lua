@@ -15,7 +15,7 @@ local top_panel2 = function(s, offset)
 
 	local offsetx = 0
 	if offset == true then
-		offsetx = dpi(590) --dpi(660)
+		offsetx = dpi(580) --dpi(660)
 	end
 
 	local panel = wibox
@@ -58,7 +58,6 @@ local top_panel2 = function(s, offset)
 	--}
 
 	local clock 			= require('widget.clock')(s)
-	--local myupdates = awful.widget.watch("sh -c /home/memo/autostart.sh",1)
 	local status = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status.sh',1)
 	--local layout_box 		= require('widget.layoutbox')(s)
 	--local add_button 		= require('widget.open-default-app')(s)
@@ -77,8 +76,9 @@ local top_panel2 = function(s, offset)
 		{
 			layout = wibox.layout.fixed.horizontal,
 			clock,
-		--	task_list(s),
-		--	add_button
+			--task_list(s),
+			--add_button
+			--myupdates,
 			status
 		}--, 
 		--clock,
