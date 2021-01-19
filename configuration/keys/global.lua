@@ -334,6 +334,14 @@ local global_keys = awful.util.table.join(
 		{description = 'area/selected screenshot', group = 'Utility'}
 	),
 	awful.key(
+		{modkey}, 
+		'z',
+		function ()
+			awful.spawn.easy_async_with_shell(apps.utils.dmenu,function() end)
+		end,
+		{description = 'dmenu', group = 'Utility'}
+	),
+	awful.key(
 		{modkey},
 		'x',
 		function()

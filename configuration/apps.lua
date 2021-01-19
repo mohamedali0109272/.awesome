@@ -83,6 +83,8 @@ return {
 		-- Area screenshot
 		area_screenshot = utils_dir .. 'snap area',
 		-- Update profile picture
-		update_profile  = utils_dir .. 'profile-image'
+		update_profile  = utils_dir .. 'profile-image',
+		--dmenu.sh
+		dmenu  = utils_dir .. 'dmenu.sh'
 	}
 }
