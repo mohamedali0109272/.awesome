@@ -140,8 +140,9 @@ local right_panel = function(s)
 						spacing = dpi(7),
 						require('widget.user-profile'),
 						require('widget.weather'),
-						require('widget.email'),
-						require('widget.social-media'),
+						--require('widget.email'),
+						--require('widget.mpd'),
+						--require('widget.social-media'),
 						require('widget.calculator')
 					},
 

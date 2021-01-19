@@ -63,10 +63,10 @@ return {
 			valid_picture_formats = {'jpg', 'png', 'jpeg'},
 			-- Leave this table empty for full auto scheduling
 			wallpaper_schedule = {
-				['00:00:00'] = 'midnight-wallpaper.jpg',
-				['06:22:00'] = 'morning-wallpaper.jpg',
-				['12:00:00'] = 'noon-wallpaper.jpg',
-				['17:58:00'] = 'night-wallpaper.jpg'
+				--['00:00:00'] = 'midnight-wallpaper.jpg',
+				['06:00:00'] = 'day.jpg',
+				--['12:00:00'] = 'noon-wallpaper.jpg',
+				['17:58:00'] = 'night.jpg'
 				-- Example of just using auto-scheduling with keywords
 				--[[
 					'midnight',
@@ -85,7 +85,7 @@ return {
 			-- Clock format
 			military_clock = true,
 			-- Default password if there's no PAM integration
-			fallback_password = 'toor',
+			fallback_password = '123123',
 			-- Capture intruder using webcam
 			capture_intruder = true,
 			-- Intruder image save location (Will create directory if it doesn't exist)

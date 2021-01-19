@@ -55,17 +55,17 @@ return {
 		'picom -b  --dbus --config ' ..
 		config_dir .. '/configuration/picom.conf',
 		-- Blueman applet
-		'blueman-applet',
+		--'blueman-applet',
 		-- Music server
-		'mpd',
+		--'mpd',
 		-- Polkit and keyring
 		-----'/usr/bin/lxqt-policykit-agent &' ..
 		-----' eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)',
 		'/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)',
 		-- Load X colors
-		'xrdb $HOME/.Xresources',
+		--'xrdb $HOME/.Xresources',
 		-- Audio equalizer
-		'pulseeffects --gapplication-service',
+		--'pulseeffects --gapplication-service',
 		-- Lockscreen timer
 		[[
 		xidlehook --not-when-fullscreen --not-when-audio --timer 600 \
