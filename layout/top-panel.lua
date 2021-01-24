@@ -5,7 +5,7 @@ local gears = require('gears')
 local icons = require('theme.icons')
 local dpi = beautiful.xresources.apply_dpi
 local clickable_container = require('widget.clickable-container')
-local task_list = require('widget.task-list')
+--local task_list = require('widget.task-list')
 
 local top_panel = function(s, offset)
 
@@ -26,7 +26,7 @@ local top_panel = function(s, offset)
 		stretch = false,
 		bg = beautiful.background,
 		fg = beautiful.fg_normal,
-		--margins = dpi(10)
+		margins = dpi(10)
 	}
 
 
@@ -73,40 +73,45 @@ local top_panel = function(s, offset)
 	local layout_box 		= require('widget.layoutbox')(s)
 	--local add_button 		= require('widget.open-default-app')(s)
 	s.tray_toggler  		= require('widget.tray-toggle')
-	s.updater 				= require('widget.package-updater')()
-	s.screen_rec 			= require('widget.screen-recorder')()
+	--s.updater 				= require('widget.package-updater')()
+	--s.screen_rec 			= require('widget.screen-recorder')()
 	s.mpd       			= require('widget.mpd')()
-	s.bluetooth   			= require('widget.bluetooth')()
-	s.battery     			= require('widget.battery')()
-	s.network       		= require('widget.network')()
+	--s.bluetooth   			= require('widget.bluetooth')()
+	--s.battery     			= require('widget.battery')()
+	--s.network       		= require('widget.network')()
 	s.info_center_toggle	= require('widget.info-center-toggle')()
 
 	panel : setup {
 		layout = wibox.layout.align.horizontal,
-		expand = 'none',
-		--{
-		--	layout = wibox.layout.fixed.horizontal,
-		--	--task_list(s),
-		--	--add_button
-		--}, 
+		expand = 'true',
+		{
+			widget = wibox.widget.separator,
+			layout = wibox.layout.fixed.horizontal,
+			--task_list(s),
+			--add_button
+		}, 
 		--clock,
+		widget = wibox.widget.separator,
 		{
 			layout = wibox.layout.fixed.horizontal,
-			--spacing = dpi(0.5),
+			spacing = dpi(0.5),
 			{
 				s.systray,
 				margins = dpi(5),
 				widget = wibox.container.margin
 			},
+			{	
+			layout = wibox.layout.fixed.horizontal,
 			s.tray_toggler,
-			s.updater,
-			s.screen_rec,
+			--s.updater,
+			--s.screen_rec,
 			s.mpd,
-			s.network,
-			s.bluetooth,
-			s.battery,
+			--s.network,
+			--s.bluetooth,
+			--s.battery,
 			layout_box,
 			s.info_center_toggle
+			},
 		}
 	}
 

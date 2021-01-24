@@ -133,7 +133,7 @@ local right_panel = function(s)
 				-- Today Pane
 				{
 					id = 'pane_id',
-					visible = true,
+					visible = false,
 					layout = wibox.layout.fixed.vertical,
 					{
 						layout = wibox.layout.fixed.vertical,
@@ -143,14 +143,14 @@ local right_panel = function(s)
 						--require('widget.email'),
 						--require('widget.mpd'),
 						--require('widget.social-media'),
-						require('widget.calculator')
+						--require('widget.calculator')
 					},
 
 				},
 				-- Notification Center
 				{
 					id = 'notif_id',
-					visible = false,
+					visible = true,
 					require('widget.notif-center')(s),
 					layout = wibox.layout.fixed.vertical,
 				}
