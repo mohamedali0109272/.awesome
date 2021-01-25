@@ -12,11 +12,11 @@ return function(s, panel, action_bar_width)
 	local menu_icon = wibox.widget {
 		{
 			id = 'menu_btn',
-			image = icons.menu,
+			image = icons.logout,
 			resize = true,
 			widget = wibox.widget.imagebox
 		},
-		margins = dpi(2),
+		margins = dpi(5),
 		widget = wibox.container.margin
 	}
 	
@@ -36,7 +36,8 @@ return function(s, panel, action_bar_width)
 				1,
 				nil,
 				function()
-					panel:toggle()
+					--panel:toggle()
+					awesome.emit_signal('module::exit_screen:show')
 				end
 			)
 		)
@@ -45,14 +46,14 @@ return function(s, panel, action_bar_width)
 	panel:connect_signal(
 		'opened',
 		function()
-			menu_icon.menu_btn:set_image(gears.surface(icons.close_small))
+			menu_icon.menu_btn:set_image(gears.surface(icons.logout))
 		end
 	)
 
 	panel:connect_signal(
 		'closed',
 		function()
-			menu_icon.menu_btn:set_image(gears.surface(icons.menu))
+			menu_icon.menu_btn:set_image(gears.surface(icons.logout))
 		end
 	)
 
@@ -63,7 +64,7 @@ return function(s, panel, action_bar_width)
 		{
 			require('widget.search-apps')(),
 			tag_list(s),
-		--	require("widget.xdg-folders")(),
+			require("widget.xdg-folders")(),
 			layout = wibox.layout.fixed.vertical,
 		},
 		nil,

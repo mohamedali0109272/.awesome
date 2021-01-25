@@ -20,7 +20,10 @@ local left_panel = function(screen)
 		ontop = true,
 		shape = gears.shape.rectangle,
 		bg = beautiful.background,
-		fg = beautiful.fg_normal
+		fg = beautiful.fg_normal,
+		shape = function(cr, w, h)
+			gears.shape.rounded_rect(cr, w, h, dpi(13))
+		end
 	}
 
 	panel.opened = false

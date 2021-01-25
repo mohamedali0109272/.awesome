@@ -30,6 +30,9 @@ local top_panel2 = function(s, offset)
 		stretch = false,
 		bg = beautiful.background, 
 		fg = beautiful.fg_normal,
+		shape = function(cr, w, h)
+			gears.shape.rounded_rect(cr, w, h, dpi(13))
+		end
 		--margins = dpi(10)
 	}
 
@@ -69,7 +72,19 @@ local top_panel2 = function(s, offset)
 	--s.battery     			= require('widget.battery')()
 	--s.network       		= require('widget.network')()
 	--s.info_center_toggle	= require('widget.info-center-toggle')()
-
+	status:buttons(
+		gears.table.join(
+			awful.button(
+				{},
+				1,
+				nil,
+				function()
+					awful.spawn.easy_async_with_shell("st htop")
+				end
+			)
+		)
+	)
+	
 	panel : setup {
 		layout = wibox.layout.align.horizontal,
 		expand = 'none',

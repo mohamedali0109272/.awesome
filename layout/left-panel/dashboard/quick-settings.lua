@@ -40,9 +40,9 @@ return wibox.widget {
 					layout = wibox.layout.fixed.vertical,
 					require('widget.brightness-slider'),
 					require('widget.volume-slider'),					
-					require('widget.airplane-mode'), 
-					require('widget.bluetooth-toggle'),
-					require('widget.blue-light')
+					--require('widget.airplane-mode'), 
+					--require('widget.bluetooth-toggle'),
+					--require('widget.blue-light')
 				},
 				bg = beautiful.groups_bg,
 				shape = function(cr, width, height)

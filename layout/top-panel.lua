@@ -20,13 +20,16 @@ local top_panel = function(s, offset)
 		screen = s,
 		type = 'dock',
 		height = dpi(28),
-		width = s.geometry.width  - offsetx - 10,
+		width = s.geometry.width  - offsetx - 5,
 		x = s.geometry.x + offsetx,
 		y = s.geometry.y + 5,
 		stretch = false,
 		bg = beautiful.background,
 		fg = beautiful.fg_normal,
-		margins = dpi(10)
+		margins = dpi(10),
+		shape = function(cr, w, h)
+			gears.shape.rounded_rect(cr, w, h, dpi(13))
+		end
 	}
 
 
@@ -53,7 +56,7 @@ local top_panel = function(s, offset)
 
 	panel:connect_signal(
 		'mouse::enter',
-		function() 
+		function()
 			local w = mouse.current_wibox
 			if w then
 				w.cursor = 'left_ptr'
@@ -85,13 +88,11 @@ local top_panel = function(s, offset)
 		layout = wibox.layout.align.horizontal,
 		expand = 'true',
 		{
-			widget = wibox.widget.separator,
 			layout = wibox.layout.fixed.horizontal,
 			--task_list(s),
 			--add_button
-		}, 
-		--clock,
-		widget = wibox.widget.separator,
+		},
+		clock,
 		{
 			layout = wibox.layout.fixed.horizontal,
 			spacing = dpi(0.5),
@@ -100,7 +101,7 @@ local top_panel = function(s, offset)
 				margins = dpi(5),
 				widget = wibox.container.margin
 			},
-			{	
+			{
 			layout = wibox.layout.fixed.horizontal,
 			s.tray_toggler,
 			--s.updater,

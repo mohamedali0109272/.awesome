@@ -26,6 +26,9 @@ local top_panel2 = function(s, offset)
 		stretch = false,
 		bg = beautiful.background,
 		fg = beautiful.fg_normal,
+		shape = function(cr, w, h)
+			gears.shape.rounded_rect(cr, w, h, dpi(13))
+		end
 		--margins = dpi(10)
 	}
 
