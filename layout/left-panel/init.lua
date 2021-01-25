@@ -145,7 +145,7 @@ local left_panel = function(screen)
 			visible = false,
 			forced_width = panel_content_width,
 			{
-				require('layout.left-panel.dashboard')(screen, panel),
+				--require('layout.left-panel.dashboard')(screen, panel),
 				layout = wibox.layout.stack
 			}
 		},

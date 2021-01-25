@@ -10,11 +10,11 @@ return {
 		-- Default web browser
 		web_browser = 'chromium',
 		-- Default text editor
-		text_editor = 'code',--subl3',
+		text_editor = 'subl3',
 		-- Default file manager
-		file_manager = 'dolphin',
+		file_manager = 'thunar',
 		-- Default media player
-		multimedia = 'vlc',
+		multimedia = 'mpv',
 		-- Default game, can be a launcher like steam
 		game = 'supertuxkart',
 		-- Default graphics editor

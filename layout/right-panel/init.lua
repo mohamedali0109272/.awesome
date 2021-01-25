@@ -1,5 +1,6 @@
 local awful = require('awful')
 local wibox = require('wibox')
+local gears = require('gears')
 local beautiful = require('beautiful')
 local dpi = beautiful.xresources.apply_dpi
 panel_visible = false
@@ -7,7 +8,7 @@ panel_visible = false
 local right_panel = function(s)
 
 	-- Set right panel geometry
-	local panel_width = dpi(320)
+	local panel_width = dpi(350)
 	local panel_x = s.geometry.x + s.geometry.width - panel_width
 
 	local panel = wibox {
@@ -19,8 +20,11 @@ local right_panel = function(s)
 		height = s.geometry.height - 10 ,
 		x = panel_x - 5,
 		y = s.geometry.y + 5,
-		bg = beautiful.background,
-		fg = beautiful.fg_normal
+		bg = beautiful.background, 
+		fg = beautiful.fg_normal,
+		shape = function(cr, w, h)
+			gears.shape.rounded_rect(cr, w, h, dpi(13))
+		end
 	}
 
 	panel.opened = false
@@ -133,15 +137,17 @@ local right_panel = function(s)
 				-- Today Pane
 				{
 					id = 'pane_id',
-					visible = false,
+					visible = true,
 					layout = wibox.layout.fixed.vertical,
 					{
 						layout = wibox.layout.fixed.vertical,
 						spacing = dpi(7),
 						require('widget.user-profile'),
 						require('widget.weather'),
+						require('widget.mpd'),
+						require('widget.brightness-slider'),
+						require('widget.volume-slider'),
 						--require('widget.email'),
-						--require('widget.mpd'),
 						--require('widget.social-media'),
 						--require('widget.calculator')
 					},
@@ -150,7 +156,7 @@ local right_panel = function(s)
 				-- Notification Center
 				{
 					id = 'notif_id',
-					visible = true,
+					visible = false,
 					require('widget.notif-center')(s),
 					layout = wibox.layout.fixed.vertical,
 				}
