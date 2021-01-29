@@ -32,10 +32,10 @@ return wibox.widget {
 	{
 		{
 			layout = wibox.layout.fixed.vertical,
-			require('widget.cpu-meter'),
-			require('widget.ram-meter'),
-			require('widget.temperature-meter'),
-			require('widget.harddrive-meter')
+			--require('widget.cpu-meter'),
+			--require('widget.ram-meter'),
+			--require('widget.temperature-meter'),
+			--require('widget.harddrive-meter')
 		},
 		bg = beautiful.groups_bg,
 		shape = function(cr, width, height)

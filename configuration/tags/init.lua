@@ -35,7 +35,7 @@ local tags = {
 		icon = icons.multimedia,
 		default_app = apps.default.multimedia,
 		gap = beautiful.useless_gap,
-		layout = awful.layout.suit.floating,
+		layout = awful.layout.suit.tile,
 		gap = 0
 	},
 	{
@@ -43,7 +43,7 @@ local tags = {
 		icon = icons.games,
 		default_app = apps.default.game,
 		gap = beautiful.useless_gap,
-		layout = awful.layout.suit.floating
+		layout = awful.layout.suit.tile
 	},
 	{
 		type = 'graphics',
@@ -55,7 +55,7 @@ local tags = {
 		type = 'sandbox',
 		icon = icons.sandbox,
 		default_app = apps.default.sandbox,
-		layout = awful.layout.suit.max,
+		layout = awful.layout.suit.tile,
 		gap = 0
 	},
 	{
@@ -63,7 +63,7 @@ local tags = {
 		icon = icons.development,
 		default_app = apps.default.development,
 		gap = beautiful.useless_gap,
-		layout = awful.layout.suit.floating
+		layout = awful.layout.suit.tile
 	}
 	-- {
 	--   type = 'social',

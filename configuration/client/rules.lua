@@ -170,8 +170,7 @@ ruled.client.connect_signal(
 				class = {
 					'Geany',
 					'Atom',
-					'Subl3',
-					'code-oss'
+					'Subl3'
 				},
 				name  = {
 					'LibreOffice',
@@ -279,7 +278,8 @@ ruled.client.connect_signal(
 					'UnityHub',
 					'jetbrains-studio',
 					'Ettercap',
-					'scrcpy'
+					'scrcpy',
+					'code-oss'
 				}
 			},
 			properties = {
@@ -304,6 +304,23 @@ ruled.client.connect_signal(
 				floating = true,
 				ontop = true,
 				placement = awful.placement.centered
+			}
+		}
+
+		--albert
+		ruled.client.append_rule {
+			id        = 'albert',
+			rule_any  = {
+				class    = {
+					'albert'
+				},
+			},
+			properties = {
+				titlebars_enabled = false,
+				skip_decoration = true,
+				floating = true,
+				ontop = true,
+				--placement = awful.placement.top
 			}
 		}
 

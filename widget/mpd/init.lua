@@ -10,7 +10,7 @@ local media_buttons = ui_content.media_buttons.navigate_buttons
 
 local music_box = wibox.widget {
 	layout = wibox.layout.align.horizontal,
-	forced_height = dpi(50),
+	forced_height = dpi(60),
 	{
 		layout = wibox.layout.fixed.horizontal,
 		spacing = dpi(10),

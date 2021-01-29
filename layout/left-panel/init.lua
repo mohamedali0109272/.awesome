@@ -8,7 +8,7 @@ local apps = require('configuration.apps')
 local left_panel = function(screen)
 	
 	local action_bar_width = dpi(40)
-	local panel_content_width = dpi(300)
+	local panel_content_width = dpi(0)
 
 	local panel = wibox {
 		screen = screen,
@@ -18,7 +18,7 @@ local left_panel = function(screen)
 		x = screen.geometry.x + 5,
 		y = screen.geometry.y + 5,
 		ontop = true,
-		shape = gears.shape.rectangle,
+		--shape = gears.shape.rectangle,
 		bg = beautiful.background,
 		fg = beautiful.fg_normal,
 		shape = function(cr, w, h)

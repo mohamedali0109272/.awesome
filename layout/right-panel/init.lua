@@ -8,7 +8,7 @@ panel_visible = false
 local right_panel = function(s)
 
 	-- Set right panel geometry
-	local panel_width = dpi(350)
+	local panel_width = dpi(360)
 	local panel_x = s.geometry.x + s.geometry.width - panel_width
 
 	local panel = wibox {
@@ -142,16 +142,16 @@ local right_panel = function(s)
 					{
 						layout = wibox.layout.fixed.vertical,
 						spacing = dpi(7),
-						require('widget.user-profile'),
+						--require('widget.user-profile'),
 						require('widget.weather'),
-						require('widget.mpd'),
 						require('widget.brightness-slider'),
 						require('widget.volume-slider'),
+						require('widget.mpd'),
+						require('widget.blue-light')
 						--require('widget.email'),
 						--require('widget.social-media'),
 						--require('widget.calculator')
 					},
-
 				},
 				-- Notification Center
 				{

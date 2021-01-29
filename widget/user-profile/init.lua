@@ -29,7 +29,6 @@ message_table = {
 	'The last thing I want to do is hurt you. But it’s still on the list.',
 	'If I agreed with you we’d both be wrong.',
 	'I intend to live forever. So far, so good.',
-	'Jesus loves you, but everyone else thinks you’re an asshole.',
 	'Your baby is so ugly, you should have thrown it away and kept the stork.',
 	'If your brain was dynamite, there wouldn’t be enough to blow your hat off.',
 	'You are more disappointing than an unsalted pretzel.',
@@ -43,7 +42,6 @@ message_table = {
 	'You bring everyone so much joy, when you leave the room.',
 	'I thought of you today. It reminded me to take out the trash.',
 	'You are the human version of period cramps.',
-	'You’re the reason God created the middle finger.'
 }
 
 local profile_imagebox = wibox.widget {
