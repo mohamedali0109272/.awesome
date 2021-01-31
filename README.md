@@ -31,16 +31,10 @@
 2. Clone this repository.
 
 	```bash
-	$ git clone https://github.com/mohamedali0109272/.awesome
+	$ git clone https://github.com/mohamedali0109272/.awesome ~/.config/awesome
 	```
 
 3. Make sure to create a backup if you have a current AwesomeWM configuration.
-4. Copy the `.awesome` folder to your `"${HOME}"/.config/`. I'll just assume that you don't have an `awesome` folder in your `~/.config/`:
-
-	```bash
-	$ cd .awesome
-	$ cp -r * $HOME/.config/awesome/
-	```
 
 4. Change the global configuration in `$HOME/.config/awesome/configuration/config.lua`.
 5. Reload AwesomeWM by pressing <kbd>Super + Shift + r</kbd>.
@@ -49,13 +43,10 @@
 
 + Notification Center
 + Dynamic Wallpaper
-+ File/Web Searching like macOS' Spotlight
 + Application Dashboard
 + Brightness and Volume OSDs
 + Functional Trash Widget
 + Built-in Screen Recorder Widget
-+ Built-in Calculator Widget
-+ Email Widget
 + Weather Widget
 + Quake Terminal
 + Hardware Monitor
