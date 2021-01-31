@@ -15,7 +15,7 @@ local top_panel2 = function(s, offset)
 
 	local offsetx = 0
 	if offset == true then
-		offsetx = dpi(580) --dpi(660)
+		offsetx = dpi(555) --dpi(660)
 	end
 
 	local panel = wibox
@@ -24,7 +24,7 @@ local top_panel2 = function(s, offset)
 		screen = s,
 		type = 'dock',
 		height = dpi(28),
-		width = s.geometry.width  - offsetx - 525, --625,
+		width = s.geometry.width  - offsetx - 510, --625,
 		x = s.geometry.x + offsetx,
 		y = s.geometry.y + 5,
 		stretch = false,
@@ -61,7 +61,12 @@ local top_panel2 = function(s, offset)
 	--}
 
 	local clock 			= require('widget.clock')(s)
-	local status = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status.sh',1)
+	local cpu  = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/cpu.sh',1)
+	local ram = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/ram.sh',2)
+	local temp = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/temp.sh',5)
+	local netspeed = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/netspeed.sh',1)
+	--local swap = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/swap.sh',1)
+	--local status = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status.sh',1)
 	--local layout_box 		= require('widget.layoutbox')(s)
 	--local add_button 		= require('widget.open-default-app')(s)
 	--s.tray_toggler  		= require('widget.tray-toggle')
@@ -72,18 +77,19 @@ local top_panel2 = function(s, offset)
 	--s.battery     			= require('widget.battery')()
 	--s.network       		= require('widget.network')()
 	--s.info_center_toggle	= require('widget.info-center-toggle')()
-	status:buttons(
-		gears.table.join(
-			awful.button(
-				{},
-				1,
-				nil,
-				function()
-					awful.spawn.easy_async_with_shell("st htop")
-				end
-			)
-		)
-	)
+	
+	-- status:buttons(
+	-- 	gears.table.join(
+	-- 		awful.button(
+	-- 			{},
+	-- 			1,
+	-- 			nil,
+	-- 			function()
+	-- 				awful.spawn.easy_async_with_shell("st htop")
+	-- 			end
+	-- 		)
+	-- 	)
+	-- )
 	
 	panel : setup {
 		layout = wibox.layout.align.horizontal,
@@ -94,7 +100,11 @@ local top_panel2 = function(s, offset)
 			--task_list(s),
 			--add_button
 			--myupdates,
-			status
+			cpu,
+			ram,
+			temp,
+			netspeed
+			--status
 		}--, 
 		--clock,
 		--{
