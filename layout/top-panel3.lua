@@ -15,7 +15,7 @@ local top_panel2 = function(s, offset)
 
 	local offsetx = 0
 	if offset == true then
-		offsetx = dpi(555) --dpi(660)
+		offsetx = dpi(535) --dpi(660)
 	end
 
 	local panel = wibox
@@ -24,10 +24,10 @@ local top_panel2 = function(s, offset)
 		screen = s,
 		type = 'dock',
 		height = dpi(28),
-		width = s.geometry.width  - offsetx - 510, --625,
-		x = s.geometry.x + offsetx,
+		width =  81 ,--s.geometry.width  - 1300, --625,
+		x = s.geometry.width / 2 - 20 ,--+ offsetx,
 		y = s.geometry.y + 5,
-		stretch = false,
+		stretch = true,
 		bg = beautiful.background, 
 		fg = beautiful.fg_normal,
 		shape = function(cr, w, h)
@@ -61,10 +61,10 @@ local top_panel2 = function(s, offset)
 	--}
 
 	local clock 			= require('widget.clock')(s)
-	local cpu  = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/cpu.sh',1)
-	local ram = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/ram.sh',2)
-	local temp = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/temp.sh',5)
-	local netspeed = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/netspeed.sh',1)
+--------local cpu  = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/cpu.sh',1)
+--------local ram = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/ram.sh',2)
+--------local temp = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/temp.sh',5)
+--------local netspeed = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/netspeed.sh',1)
 	--local swap = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/swap.sh',1)
 	--local status = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status.sh',1)
 	--local layout_box 		= require('widget.layoutbox')(s)
@@ -93,17 +93,17 @@ local top_panel2 = function(s, offset)
 	
 	panel : setup {
 		layout = wibox.layout.align.horizontal,
-		expand = 'none',
+		expand = 'true',
 		{
 			layout = wibox.layout.fixed.horizontal,
 			clock,
 			--task_list(s),
 			--add_button
 			--myupdates,
-			cpu,
-			ram,
-			temp,
-			netspeed
+			--cpu,
+			--ram,
+			--temp,
+			--netspeed
 			--status
 		}--, 
 		--clock,

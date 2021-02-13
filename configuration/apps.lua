@@ -24,7 +24,7 @@ return {
 		-- Default IDE
 		development = 'code',
 		-- Default network manager
-		network_manager = 'st iwctl',
+		network_manager = 'st nmtui',  --iwctl',
 		-- Default bluetooth manager
 		bluetooth_manager = 'blueman-manager',
 		-- Default power manager

@@ -13,7 +13,6 @@ media_buttons.play_button_image = wibox.widget {
 		id = 'play',
 		image = widget_icon_dir .. 'play.svg',
 		resize = true,
-		opacity = 0.8,
 		widget = wibox.widget.imagebox
 	},
 	layout = wibox.layout.align.horizontal
@@ -24,7 +23,6 @@ media_buttons.next_button_image = wibox.widget {
 		id = 'next',
 		image = widget_icon_dir .. 'next.svg',
 		resize = true,
-		opacity = 0.8,
 		widget = wibox.widget.imagebox
 	},
 	layout = wibox.layout.align.horizontal
@@ -35,7 +33,26 @@ media_buttons.prev_button_image = wibox.widget {
 		id = 'prev',
 		image = widget_icon_dir .. 'prev.svg',
 		resize = true,
-		opacity = 0.8,
+		widget = wibox.widget.imagebox
+	},
+	layout = wibox.layout.align.horizontal
+}
+
+media_buttons.repeat_button_image = wibox.widget {
+	{
+		id = 'rep',
+		image = widget_icon_dir .. 'repeat-on.svg',
+		resize = true,
+		widget = wibox.widget.imagebox
+	},
+	layout = wibox.layout.align.horizontal
+}
+
+media_buttons.random_button_image = wibox.widget {
+	{
+		id = 'rand',
+		image = widget_icon_dir .. 'random-on.svg',
+		resize = true,
 		widget = wibox.widget.imagebox
 	},
 	layout = wibox.layout.align.horizontal
@@ -43,63 +60,62 @@ media_buttons.prev_button_image = wibox.widget {
 
 media_buttons.play_button = wibox.widget {
 	{
-		{
-			media_buttons.play_button_image,
-			margins = dpi(7),
-			widget = wibox.container.margin
-		},
-		widget = clickable_container
+		media_buttons.play_button_image,
+		margins = dpi(7),
+		widget = wibox.container.margin
 	},
-	forced_width = dpi(36),
-	forced_height = dpi(36),
-	bg = beautiful.transparent,
-	shape = function(cr, width, height)
-		gears.shape.rounded_rect(cr, width, height, beautiful.groups_radius)
-	end,
-	widget = wibox.container.background
+	widget = clickable_container
 }
 
 media_buttons.next_button = wibox.widget {
 	{
-		{
-			media_buttons.next_button_image,
-			margins = dpi(10),
-			widget = wibox.container.margin
-		},
-		widget = clickable_container
+		media_buttons.next_button_image,
+		margins = dpi(10),
+		widget = wibox.container.margin
 	},
-	forced_width = dpi(36),
-	forced_height = dpi(36),
-	bg = beautiful.transparent,
-	shape = function(cr, width, height)
-		gears.shape.rounded_rect(cr, width, height, beautiful.groups_radius)
-	end,
-	widget = wibox.container.background
+	widget = clickable_container
 }
 
 media_buttons.prev_button = wibox.widget {
 	{
-		{
-			media_buttons.prev_button_image,
-			margins = dpi(10),
-			widget = wibox.container.margin
-		},
-		widget = clickable_container
+		media_buttons.prev_button_image,
+		margins = dpi(10),
+		widget = wibox.container.margin
 	},
-	forced_width = dpi(36),
-	forced_height = dpi(36),
-	bg = beautiful.transparent,
-	shape = function(cr, width, height)
-		gears.shape.rounded_rect(cr, width, height, beautiful.groups_radius)
-	end,
-	widget = wibox.container.background
+	widget = clickable_container
+}
+
+media_buttons.repeat_button = wibox.widget {
+	{
+		media_buttons.repeat_button_image,
+		margins = dpi(10),
+		widget = wibox.container.margin
+	},
+	widget = clickable_container
+}
+
+media_buttons.random_button = wibox.widget {
+	{
+		media_buttons.random_button_image,
+		margins = dpi(10),
+		widget = wibox.container.margin
+	},
+	widget = clickable_container
 }
 
 media_buttons.navigate_buttons = wibox.widget {
-	layout = wibox.layout.fixed.horizontal,
-	media_buttons.prev_button,
-	media_buttons.play_button,
-	media_buttons.next_button
+	expand = 'none',
+	layout = wibox.layout.align.horizontal,
+	media_buttons.repeat_button,
+	{
+		layout = wibox.layout.fixed.horizontal,
+		media_buttons.prev_button,
+		media_buttons.play_button,
+		media_buttons.next_button,
+		forced_height = dpi(35),
+	},
+	media_buttons.random_button,
+	forced_height = dpi(35),
 }
 
 return media_buttons

@@ -20,8 +20,8 @@ local top_panel = function(s, offset)
 		screen = s,
 		type = 'dock',
 		height = dpi(28),
-		width = s.geometry.width  - offsetx - 5,
-		x = s.geometry.x + offsetx,
+		width = s.geometry.width  / 4  - 5  ,  -- offsetx - 5,
+		x = s.geometry.width * 3/4,  -- + offsetx,
 		y = s.geometry.y + 5,
 		stretch = false,
 		bg = beautiful.background,
@@ -78,10 +78,10 @@ local top_panel = function(s, offset)
 	s.tray_toggler  		= require('widget.tray-toggle')
 	--s.updater 				= require('widget.package-updater')()
 	s.screen_rec 			= require('widget.screen-recorder')()
-	--s.mpd       			= require('widget.mpd')()
-	--s.bluetooth   			= require('widget.bluetooth')()
+	s.mpd       			= require('widget.mpd')()
+	s.bluetooth   			= require('widget.bluetooth')()
 	s.battery     			= require('widget.battery')()
-	--s.network       		= require('widget.network')()
+	s.network       		= require('widget.network')()
 	s.info_center_toggle	= require('widget.info-center-toggle')()
 
 	panel : setup {
@@ -95,7 +95,7 @@ local top_panel = function(s, offset)
 		clock,
 		{
 			layout = wibox.layout.fixed.horizontal,
-			spacing = dpi(0.5),
+			spacing = dpi(1),
 			{
 				s.systray,
 				margins = dpi(5),
@@ -106,9 +106,9 @@ local top_panel = function(s, offset)
 			s.tray_toggler,
 			--s.updater,
 			s.screen_rec,
-			--s.mpd,
-			--s.network,
-			--s.bluetooth,
+			s.mpd,
+			s.bluetooth,
+			s.network,
 			s.battery,
 			layout_box,
 			s.info_center_toggle
