@@ -16,7 +16,7 @@ return function(s, panel, action_bar_width)
 			resize = true,
 			widget = wibox.widget.imagebox
 		},
-		margins = dpi(5),
+		margins = dpi(3),
 		widget = wibox.container.margin
 	}
 	
@@ -59,13 +59,13 @@ return function(s, panel, action_bar_width)
 
 	return wibox.widget {
 		id = 'action_bar',
-		layout = wibox.layout.align.vertical,
+		layout = wibox.layout.align.horizontal, 
 		forced_width = action_bar_width,
 		{
 			require('widget.search-apps')(),
 			tag_list(s),
-			require("widget.xdg-folders")(),
-			layout = wibox.layout.fixed.vertical,
+			--require("widget.xdg-folders")(),
+			layout = wibox.layout.fixed.horizontal,
 		},
 		nil,
 		open_dashboard_button

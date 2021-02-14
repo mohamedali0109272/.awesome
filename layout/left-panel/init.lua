@@ -7,16 +7,16 @@ local apps = require('configuration.apps')
 
 local left_panel = function(screen)
 	
-	local action_bar_width = dpi(40)
-	local panel_content_width = dpi(0)
+	local width = dpi(4000)
+	local panel_content_width = dpi(0) 
 
 	local panel = wibox {
 		screen = screen,
-		width = action_bar_width,
+		width = screen.geometry.width / 4,
 		type = 'dock',
-		height = screen.geometry.height - 10,
+		height = 28 ,--screen.geometry.height - 10,
 		x = screen.geometry.x + 5,
-		y = screen.geometry.y + 5,
+		y = screen.geometry.y + 5,  
 		ontop = true,
 		--shape = gears.shape.rectangle,
 		bg = beautiful.background,
@@ -28,9 +28,9 @@ local left_panel = function(screen)
 
 	panel.opened = false
 
-	panel:struts {
-		left = action_bar_width + 5
-	}
+	-- panel:struts {
+	-- 	left = 5,--width + 5
+	-- }
 
 	local backdrop = wibox {
 		ontop = true,
@@ -91,7 +91,7 @@ local left_panel = function(screen)
 	end
 
 	local open_panel = function(should_run_rofi)
-		panel.width = action_bar_width + panel_content_width
+		panel.width = width
 		backdrop.visible = true
 		update_backdrop(backdrop, panel)
 		panel:get_children_by_id('panel_content')[1].visible = true
@@ -102,7 +102,7 @@ local left_panel = function(screen)
 	end
 
 	local close_panel = function()
-		panel.width = action_bar_width
+		panel.width = width
 		panel:get_children_by_id('panel_content')[1].visible = false
 		backdrop.visible = false
 		update_backdrop(backdrop, panel)
@@ -149,7 +149,7 @@ local left_panel = function(screen)
 				layout = wibox.layout.stack
 			}
 		},
-		require('layout.left-panel.action-bar')(screen, panel, action_bar_width)
+		require('layout.left-panel.action-bar')(screen, panel, width)
 	}
 	return panel
 end

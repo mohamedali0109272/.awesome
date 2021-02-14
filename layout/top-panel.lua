@@ -72,14 +72,14 @@ local top_panel = function(s, offset)
 		widget = wibox.widget.systray({fg='#00000000'})
 	}
 
-	--local clock 			= require('widget.clock')(s)
+	local clock 			= require('widget.clock')(s)
 	local layout_box 		= require('widget.layoutbox')(s)
 	--local add_button 		= require('widget.open-default-app')(s)
 	s.tray_toggler  		= require('widget.tray-toggle')
 	--s.updater 				= require('widget.package-updater')()
 	s.screen_rec 			= require('widget.screen-recorder')()
 	s.mpd       			= require('widget.mpd')()
-	s.bluetooth   			= require('widget.bluetooth')()
+	--s.bluetooth   			= require('widget.bluetooth')()
 	s.battery     			= require('widget.battery')()
 	s.network       		= require('widget.network')()
 	s.info_center_toggle	= require('widget.info-center-toggle')()
@@ -92,7 +92,8 @@ local top_panel = function(s, offset)
 			--task_list(s),
 			--add_button
 		},
-		clock,
+		nil,
+		--clock,
 		{
 			layout = wibox.layout.fixed.horizontal,
 			spacing = dpi(1),
@@ -107,10 +108,11 @@ local top_panel = function(s, offset)
 			--s.updater,
 			s.screen_rec,
 			s.mpd,
-			s.bluetooth,
+			--s.bluetooth,
 			s.network,
 			s.battery,
 			layout_box,
+			clock,
 			s.info_center_toggle
 			},
 		}
