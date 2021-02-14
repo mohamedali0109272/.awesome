@@ -185,26 +185,26 @@ local global_keys = awful.util.table.join(
 		end,
 		{description = 'restore minimized', group = 'screen'}
 	),
-	awful.key(
-		{},
-		'XF86MonBrightnessUp',
-		function()
-			awful.spawn('light -A 10', false)
-			awesome.emit_signal('widget::brightness')
-			awesome.emit_signal('module::brightness_osd:show', true)
-		end,
-		{description = 'increase brightness by 10%', group = 'hotkeys'}
-	),
-	awful.key(
-		{},
-		'XF86MonBrightnessDown',
-		function()
-			awful.spawn('light -U 10', false)
-			awesome.emit_signal('widget::brightness')
-			awesome.emit_signal('module::brightness_osd:show', true)
-		end,
-		{description = 'decrease brightness by 10%', group = 'hotkeys'}
-	),
+	-- awful.key(
+	-- 	{},
+	-- 	'XF86MonBrightnessUp',
+	-- 	function()
+	-- 		awful.spawn('light -A 10', false)
+	-- 		awesome.emit_signal('widget::brightness')
+	-- 		awesome.emit_signal('module::brightness_osd:show', true)
+	-- 	end,
+	-- 	{description = 'increase brightness by 10%', group = 'hotkeys'}
+	-- ),
+	-- awful.key(
+	-- 	{},
+	-- 	'XF86MonBrightnessDown',
+	-- 	function()
+	-- 		awful.spawn('light -U 10', false)
+	-- 		awesome.emit_signal('widget::brightness')
+	-- 		awesome.emit_signal('module::brightness_osd:show', true)
+	-- 	end,
+	-- 	{description = 'decrease brightness by 10%', group = 'hotkeys'}
+	-- ),
 	-- ALSA volume control
 	awful.key(
 		{},
@@ -234,63 +234,63 @@ local global_keys = awful.util.table.join(
 		end,
 		{description = 'toggle mute', group = 'hotkeys'}
 	),
-	awful.key(
-		{},
-		'XF86AudioNext',
-		function()
-			awful.spawn('mpc next', false)
-		end,
-		{description = 'next music', group = 'hotkeys'}
-	),
-	awful.key(
-		{},
-		'XF86AudioPrev',
-		function()
-			awful.spawn('mpc prev', false)
-		end,
-		{description = 'previous music', group = 'hotkeys'}
-	),
-	awful.key(
-		{},
-		'XF86AudioPlay',
-		function()
-			awful.spawn('mpc toggle', false)
-		end,
-		{description = 'play/pause music', group = 'hotkeys'}
+	-- awful.key(
+	-- 	{},
+	-- 	'XF86AudioNext',
+	-- 	function()
+	-- 		awful.spawn('mpc next', false)
+	-- 	end,
+	-- 	{description = 'next music', group = 'hotkeys'}
+	-- ),
+	-- awful.key(
+	-- 	{},
+	-- 	'XF86AudioPrev',
+	-- 	function()
+	-- 		awful.spawn('mpc prev', false)
+	-- 	end,
+	-- 	{description = 'previous music', group = 'hotkeys'}
+	-- ),
+	-- awful.key(
+	-- 	{},
+	-- 	'XF86AudioPlay',
+	-- 	function()
+	-- 		awful.spawn('mpc toggle', false)
+	-- 	end,
+	-- 	{description = 'play/pause music', group = 'hotkeys'}
 
-	),
-	awful.key(
-		{},
-		'XF86AudioMicMute',
-		function()
-			awful.spawn('amixer set Capture toggle', false)
-		end,
-		{description = 'mute microphone', group = 'hotkeys'}
-	),
-	awful.key(
-		{},
-		'XF86PowerDown',
-		function()
-			--
-		end,
-		{description = 'shutdown skynet', group = 'hotkeys'}
-	),
-	awful.key(
-		{},
-		'XF86PowerOff',
-		function()
-			awesome.emit_signal('module::exit_screen:show')
-		end,
-		{description = 'toggle exit screen', group = 'hotkeys'}
-	),
-	awful.key(
-		{},
-		'XF86Display',
-		function()
-			awful.spawn.single_instance('arandr', false)
-		end,
-		{description = 'arandr', group = 'hotkeys'}
-	),
+	-- ),
+	-- awful.key(
+	-- 	{},
+	-- 	'XF86AudioMicMute',
+	-- 	function()
+	-- 		awful.spawn('amixer set Capture toggle', false)
+	-- 	end,
+	-- 	{description = 'mute microphone', group = 'hotkeys'}
+	-- ),
+	-- awful.key(
+	-- 	{},
+	-- 	'XF86PowerDown',
+	-- 	function()
+	-- 		--
+	-- 	end,
+	-- 	{description = 'shutdown skynet', group = 'hotkeys'}
+	-- ),
+	-- awful.key(
+	-- 	{},
+	-- 	'XF86PowerOff',
+	-- 	function()
+	-- 		awesome.emit_signal('module::exit_screen:show')
+	-- 	end,
+	-- 	{description = 'toggle exit screen', group = 'hotkeys'}
+	-- ),
+	-- awful.key(
+	-- 	{},
+	-- 	'XF86Display',
+	-- 	function()
+	-- 		awful.spawn.single_instance('arandr', false)
+	-- 	end,
+	-- 	{description = 'arandr', group = 'hotkeys'}
+	-- ),
 	awful.key(
 		{modkey, 'Shift'},
 		'q',
@@ -341,30 +341,30 @@ local global_keys = awful.util.table.join(
 		end,
 		{description = 'dmenu', group = 'Utility'}
 	),
-	awful.key(
-		{modkey},
-		'x',
-		function()
-			awesome.emit_signal('widget::blur:toggle')
-		end,
-		{description = 'toggle blur effects', group = 'Utility'}
-	),
-	awful.key(
-		{modkey},
-		']',
-		function()
-			awesome.emit_signal('widget::blur:increase')
-		end,
-		{description = 'increase blur effect by 10%', group = 'Utility'}
-	),
-	awful.key(
-		{modkey},
-		'[',
-		function()
-			awesome.emit_signal('widget::blur:decrease')
-		end,
-		{description = 'decrease blur effect by 10%', group = 'Utility'}
-	),
+	-- awful.key(
+	-- 	{modkey},
+	-- 	'x',
+	-- 	function()
+	-- 		awesome.emit_signal('widget::blur:toggle')
+	-- 	end,
+	-- 	{description = 'toggle blur effects', group = 'Utility'}
+	-- ),
+	-- awful.key(
+	-- 	{modkey},
+	-- 	']',
+	-- 	function()
+	-- 		awesome.emit_signal('widget::blur:increase')
+	-- 	end,
+	-- 	{description = 'increase blur effect by 10%', group = 'Utility'}
+	-- ),
+	-- awful.key(
+	-- 	{modkey},
+	-- 	'[',
+	-- 	function()
+	-- 		awesome.emit_signal('widget::blur:decrease')
+	-- 	end,
+	-- 	{description = 'decrease blur effect by 10%', group = 'Utility'}
+	-- ),
 	awful.key(
 		{modkey},
 		't',
@@ -446,50 +446,50 @@ local global_keys = awful.util.table.join(
 		end,
 		{description = 'open application drawer', group = 'launcher'}
 	),
-	awful.key(
-		{}, 
-		'XF86Launch1',
-		function()
-			local focused = awful.screen.focused()
+	-- awful.key(
+	-- 	{}, 
+	-- 	'XF86Launch1',
+	-- 	function()
+	-- 		local focused = awful.screen.focused()
 
-			if focused.left_panel then
-				focused.left_panel:hide_dashboard()
-				focused.left_panel.opened = false
-			end
-			if focused.right_panel then
-				focused.right_panel:hide_dashboard()
-				focused.right_panel.opened = false
-			end
-			awful.spawn(apps.default.rofi_appmenu, false)
-		end,
-		{description = 'open application drawer', group = 'launcher'}
-	),
-	awful.key(
-		{modkey},
-		'r',
-		function()
-			local focused = awful.screen.focused()
+	-- 		if focused.left_panel then
+	-- 			focused.left_panel:hide_dashboard()
+	-- 			focused.left_panel.opened = false
+	-- 		end
+	-- 		if focused.right_panel then
+	-- 			focused.right_panel:hide_dashboard()
+	-- 			focused.right_panel.opened = false
+	-- 		end
+	-- 		awful.spawn(apps.default.rofi_appmenu, false)
+	-- 	end,
+	-- 	{description = 'open application drawer', group = 'launcher'}
+	-- ),
+	-- awful.key(
+	-- 	{modkey},
+	-- 	'r',
+	-- 	function()
+	-- 		local focused = awful.screen.focused()
 
-			if focused.right_panel and focused.right_panel.visible then
-				focused.right_panel.visible = false
-			end
-			screen.primary.left_panel:toggle()
-		end,
-		{description = 'open sidebar', group = 'launcher'}
-	),
-	awful.key(
-		{modkey, 'Shift'},
-		'r',
-		function()
-			local focused = awful.screen.focused()
+	-- 		if focused.right_panel and focused.right_panel.visible then
+	-- 			focused.right_panel.visible = false
+	-- 		end
+	-- 		screen.primary.left_panel:toggle()
+	-- 	end,
+	-- 	{description = 'open sidebar', group = 'launcher'}
+	-- ),
+	-- awful.key(
+	-- 	{modkey, 'Shift'},
+	-- 	'r',
+	-- 	function()
+	-- 		local focused = awful.screen.focused()
 
-			if focused.right_panel and focused.right_panel.visible then
-				focused.right_panel.visible = false
-			end
-			screen.primary.left_panel:toggle(true)
-		end,
-		{description = 'open sidebar and global search', group = 'launcher'}
-	),
+	-- 		if focused.right_panel and focused.right_panel.visible then
+	-- 			focused.right_panel.visible = false
+	-- 		end
+	-- 		screen.primary.left_panel:toggle(true)
+	-- 	end,
+	-- 	{description = 'open sidebar and global search', group = 'launcher'}
+	-- ),
 	awful.key(
 		{modkey}, 
 		'F2',
