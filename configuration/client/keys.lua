@@ -17,7 +17,7 @@ local client_keys = awful.util.table.join(
 	),
 	awful.key(
 		{modkey},
-		'q',
+		'x',
 		function(c)
 			c:kill()
 		end,

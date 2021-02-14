@@ -96,7 +96,7 @@ local top_panel = function(s, offset)
 		--clock,
 		{
 			layout = wibox.layout.fixed.horizontal,
-			spacing = dpi(1),
+			--spacing = dpi(0.5),
 			{
 				s.systray,
 				margins = dpi(5),
