@@ -61,9 +61,9 @@ local top_panel2 = function(s, offset)
 	--}
 
 	local clock 			= require('widget.clock')(s)
-	local cpu  = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/cpu.sh',0)
-	local ram = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/ram.sh',2)
-	local temp = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/temp.sh',5)
+	local cpu  = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/cpu.sh',2)
+	local ram = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/ram.sh',5)
+	local temp = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/temp.sh',9)
 	local netspeed = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/netspeed.sh',1)
 	--local swap = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/swap.sh',1)
 	--local status = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status.sh',1)
