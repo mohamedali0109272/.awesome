@@ -1,4 +1,0 @@
-
-
-
-paru  awesome-git
