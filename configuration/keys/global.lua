@@ -259,6 +259,15 @@ local global_keys = awful.util.table.join(
 	 	{description = 'play/pause music', group = 'hotkeys'}
 
 	 ),
+	 awful.key(
+	 	{modkey},
+	 	'XF86AudioPlay',
+	 	function()
+	 		awful.spawn('playerctl -a  pause', false)
+	 	end,
+	 	{description = 'pause all music', group = 'hotkeys'}
+
+	 ),
 	-- awful.key(
 	-- 	{},
 	-- 	'XF86AudioMicMute',

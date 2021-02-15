@@ -24,8 +24,8 @@ local top_panel2 = function(s, offset)
 		screen = s,
 		type = 'dock',
 		height = dpi(28),
-		width =  81 ,--s.geometry.width  - 1300, --625,
-		x = s.geometry.width / 2 - 20 ,--+ offsetx,
+		width = 340 ,--s.geometry.width  - 1300, --625,
+		x = s.geometry.width / 2 - 145 ,--+ offsetx,
 		y = s.geometry.y + 5,
 		stretch = false,
 		bg = beautiful.background, 
@@ -61,10 +61,10 @@ local top_panel2 = function(s, offset)
 	--}
 
 	local clock 			= require('widget.clock')(s)
---------local cpu  = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/cpu.sh',1)
---------local ram = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/ram.sh',2)
---------local temp = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/temp.sh',5)
---------local netspeed = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/netspeed.sh',1)
+	local cpu  = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/cpu.sh',0)
+	local ram = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/ram.sh',2)
+	local temp = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/temp.sh',5)
+	local netspeed = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/netspeed.sh',1)
 	--local swap = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status/swap.sh',1)
 	--local status = awful.widget.watch('sh -c ' .. config_dir .. '/configuration/status.sh',1)
 	--local layout_box 		= require('widget.layoutbox')(s)
@@ -96,19 +96,22 @@ local top_panel2 = function(s, offset)
 		expand = 'true',
 		{
 			layout = wibox.layout.fixed.horizontal,
-			clock,
+			--clock,
 			--task_list(s),
 			--add_button
 			--myupdates,
-			--cpu,
-			--ram,
-			--temp,
-			--netspeed
+			cpu,
+			ram,
+			clock,
+			temp,
+			netspeed
 			--status
 		}--, 
 		--clock,
 		--{
 		--	layout = wibox.layout.fixed.horizontal,
+		--	temp,
+		--	netspeed
 		--	spacing = dpi(0.5),
 		--	{
 		--		s.systray,
