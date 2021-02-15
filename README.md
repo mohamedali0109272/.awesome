@@ -28,10 +28,15 @@
 ### Installation and usage
 
 1. Install the [required dependencies]
+
+	```bash
+	 paru  -S awesome-git picom-git inter-font rofi 
+	```
+
 2. Clone this repository.
 
 	```bash
-	$ git clone https://github.com/mohamedali0109272/.awesome ~/.config/awesome
+	 git clone https://github.com/mohamedali0109272/.awesome ~/.config/awesome
 	```
 
 3. Make sure to create a backup if you have a current AwesomeWM configuration.
