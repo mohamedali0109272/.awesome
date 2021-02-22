@@ -69,7 +69,8 @@ local top_panel = function(s, offset)
 		base_size = dpi(20),
 		horizontal = true,
 		screen = 'primary',
-		widget = wibox.widget.systray({fg='#00000000'})
+		opacity = 1,
+		widget = wibox.widget.systray()
 	}
 
 	--local clock 			= require('widget.clock')(s)

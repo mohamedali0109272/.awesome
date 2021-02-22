@@ -12,9 +12,9 @@ return {
 		-- Default text editor
 		text_editor = 'subl3',
 		-- Default file manager
-		file_manager = 'thunar',
+		file_manager = 'nautilus',--'thunar',
 		-- Default media player
-		multimedia = 'mpv',
+		multimedia = 'totem',--'mpv',
 		-- Default game, can be a launcher like steam
 		game = 'supertuxkart',
 		-- Default graphics editor
@@ -63,7 +63,7 @@ return {
 		-----' eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)',
 		'/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)',
 		-- Load X colors
-		--'xrdb $HOME/.Xresources',
+		'xrdb $HOME/.Xresources',
 		-- Audio equalizer
 		--'pulseeffects --gapplication-service',
 		-- Lockscreen timer
@@ -73,7 +73,8 @@ return {
 		]],
 
 		-- You can add more start-up applications here
-		'nm-applet --no-agent'
+		'nm-applet',--' --no-agent'
+		'mpDris2'
 	},
 
 	-- List of binaries/shell scripts that will execute for a certain task
