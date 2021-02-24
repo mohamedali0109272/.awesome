@@ -30,8 +30,8 @@ screen.connect_signal('request::desktop_decoration', function(s)
 		shape = gears.shape.rectangle,
 		bg = beautiful.transparent,
 		preferred_anchors = {'middle', 'back', 'front'},
-		preferred_positions = {'left', 'right', 'top', 'bottom'},
-
+		--preferred_positions = {'left', 'right', 'top', 'bottom'},
+		preferred_positions = {'bottom'},
 	}
 
 	local ui_content = require('widget.mpd.content')
