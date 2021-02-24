@@ -8,7 +8,7 @@ return {
 		-- Default terminal emulator
 		terminal = 'st',
 		-- Default web browser
-		web_browser = 'chromium',
+		web_browser = 'brave'.--'chromium',
 		-- Default text editor
 		text_editor = 'subl3',
 		-- Default file manager
