@@ -97,37 +97,19 @@ local top_panel2 = function(s, offset)
 		{
 			layout = wibox.layout.fixed.horizontal,
 			--clock,
-			--task_list(s),
-			--add_button
-			--myupdates,
 			cpu,
 			ram,
-			clock,
+			--clock,
+			--temp,
+			--netspeed
+			--status
+		}, 
+		clock,
+		{
+			layout = wibox.layout.fixed.horizontal,
 			temp,
 			netspeed
-			--status
-		}--, 
-		--clock,
-		--{
-		--	layout = wibox.layout.fixed.horizontal,
-		--	temp,
-		--	netspeed
-		--	spacing = dpi(0.5),
-		--	{
-		--		s.systray,
-		--		margins = dpi(5),
-		--		widget = wibox.container.margin
-		--	},
-		--	s.tray_toggler,
-		--	s.updater,
-		--	s.screen_rec,
-		--	s.mpd,
-		--	s.network,
-		--	s.bluetooth,
-		--	s.battery,
-		--	layout_box,
-		--	s.info_center_toggle
-		--}
+		}
 	}
 
 	return panel

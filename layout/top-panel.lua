@@ -78,11 +78,11 @@ local top_panel = function(s, offset)
 	--local add_button 		= require('widget.open-default-app')(s)
 	s.tray_toggler  		= require('widget.tray-toggle')
 	--s.updater 				= require('widget.package-updater')()
-	s.screen_rec 			= require('widget.screen-recorder')()
+	--s.screen_rec 			= require('widget.screen-recorder')()
 	s.mpd       			= require('widget.mpd')()
-	s.bluetooth   			= require('widget.bluetooth')()
-	s.battery     			= require('widget.battery')()
-	s.network       		= require('widget.network')()
+	--s.bluetooth   			= require('widget.bluetooth')()
+	--s.battery     			= require('widget.battery')()
+	--s.network       		= require('widget.network')()
 	s.info_center_toggle	= require('widget.info-center-toggle')()
 
 	panel : setup {
@@ -106,11 +106,11 @@ local top_panel = function(s, offset)
 			layout = wibox.layout.fixed.horizontal,
 			s.tray_toggler,
 			--s.updater,
-			s.screen_rec,
+			--s.screen_rec,
 			s.mpd,
-			s.bluetooth,
-			s.network,
-			s.battery,
+			--s.bluetooth,
+			--s.network,
+			--s.battery,
 			layout_box,
 			s.info_center_toggle
 			},
