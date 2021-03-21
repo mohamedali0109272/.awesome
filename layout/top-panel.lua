@@ -81,9 +81,12 @@ local top_panel = function(s, offset)
 	--s.screen_rec 			= require('widget.screen-recorder')()
 	s.mpd       			= require('widget.mpd')()
 	--s.bluetooth   			= require('widget.bluetooth')()
-	--s.battery     			= require('widget.battery')()
+	s.battery     			= require('widget.battery')()
 	--s.network       		= require('widget.network')()
 	s.info_center_toggle	= require('widget.info-center-toggle')()
+	mykeyboardlayout = awful.widget.keyboardlayout()
+
+
 
 	panel : setup {
 		layout = wibox.layout.align.horizontal,
@@ -110,7 +113,8 @@ local top_panel = function(s, offset)
 			s.mpd,
 			--s.bluetooth,
 			--s.network,
-			--s.battery,
+			s.battery,
+			mykeyboardlayout,
 			layout_box,
 			s.info_center_toggle
 			},

@@ -78,18 +78,18 @@ local top_panel2 = function(s, offset)
 	--s.network       		= require('widget.network')()
 	--s.info_center_toggle	= require('widget.info-center-toggle')()
 	
-	-- status:buttons(
-	-- 	gears.table.join(
-	-- 		awful.button(
-	-- 			{},
-	-- 			1,
-	-- 			nil,
-	-- 			function()
-	-- 				awful.spawn.easy_async_with_shell("st htop")
-	-- 			end
-	-- 		)
-	-- 	)
-	-- )
+	 netspeed:buttons(
+	 	gears.table.join(
+	 		awful.button(
+	 			{},
+	 			1,
+	 			nil,
+	 			function()
+	 				awful.spawn.easy_async_with_shell('sh -c ' .. config_dir .. '/configuration/status/choose-netspeed.sh')
+	 			end
+	 		)
+	 	)
+	 )
 	
 	panel : setup {
 		layout = wibox.layout.align.horizontal,

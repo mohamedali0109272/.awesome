@@ -3,7 +3,7 @@ configuration {
 	show-icons: true;
 	drun-display-format: "{name}";
 	fullscreen: false;
-	threads: 0;
+	threads: 2;
 	matching: "fuzzy";
 	scroll-method: 0;
 	disable-history: false;

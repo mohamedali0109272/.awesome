@@ -24,6 +24,7 @@ beautiful.init(require('theme'))
 -- ░█░░░█▀█░░█░░█░█░█░█░░█░
 -- ░▀▀▀░▀░▀░░▀░░▀▀▀░▀▀▀░░▀░
 
+require('module.dynamic-wallpaper')
 require('layout')
 
 -- ░█▀▀░█▀█░█▀█░█▀▀░▀█▀░█▀▀░█░█░█▀▄░█▀█░▀█▀░▀█▀░█▀█░█▀█░█▀▀
@@ -39,16 +40,15 @@ root.keys(require('configuration.keys.global'))
 -- ░█░█░█░█░█░█░█░█░█░░░█▀▀░▀▀█
 -- ░▀░▀░▀▀▀░▀▀░░▀▀▀░▀▀▀░▀▀▀░▀▀▀
 
-require('module.notifications')
-require('module.auto-start')
-require('module.exit-screen')
-require('module.quake-terminal')
-require('module.menu')
 require('module.titlebar')
-require('module.brightness-osd')
-require('module.volume-osd')
+require('module.notifications')
+require('module.menu')
+require('module.auto-start')
 require('module.lockscreen')
-require('module.dynamic-wallpaper')
+require('module.volume-osd')
+require('module.brightness-osd')
+require('module.quake-terminal')
+require('module.exit-screen')
 
 -- ░█░█░█▀█░█░░░█░░░█▀█░█▀█░█▀█░█▀▀░█▀▄
 -- ░█▄█░█▀█░█░░░█░░░█▀▀░█▀█░█▀▀░█▀▀░█▀▄
