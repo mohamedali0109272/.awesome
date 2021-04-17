@@ -74,7 +74,8 @@ return {
 
 		-- You can add more start-up applications here
 		'nm-applet',--' --no-agent'
-		'mpDris2'
+		'mpDris2',
+        'xinput set-prop "SynPS/2 Synaptics TouchPad" 336 1'
 	},
 
 	-- List of binaries/shell scripts that will execute for a certain task

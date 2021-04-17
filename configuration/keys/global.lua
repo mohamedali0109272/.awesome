@@ -299,6 +299,14 @@ local global_keys = awful.util.table.join(
 		end,
 		{description = 'toggle exit screen', group = 'hotkeys'}
 	),
+    awful.key(
+            {modkey},
+            'c',
+            function()
+                    awful.spawn('/home/memo/scripts/cbspells', false)
+            end,
+            {description = 'xclip', group = 'hotkeys'}
+    ),
 	awful.key(
 		{modkey},
 		'`',
