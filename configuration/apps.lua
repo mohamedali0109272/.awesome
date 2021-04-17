@@ -14,7 +14,7 @@ return {
 		-- Default file manager
 		file_manager = 'nautilus',--'thunar',
 		-- Default media player
-		multimedia = 'totem',--'mpv',
+		multimedia = 'mpv',
 		-- Default game, can be a launcher like steam
 		game = 'supertuxkart',
 		-- Default graphics editor
@@ -61,7 +61,8 @@ return {
 		-- Polkit and keyring
 		-----'/usr/bin/lxqt-policykit-agent &' ..
 		-----' eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)',
-		'/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)',
+		--'/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)',
+        'eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh);export SSH_AUTH_SOCK',
 		-- Load X colors
 		'xrdb $HOME/.Xresources',
 		-- Audio equalizer
@@ -74,7 +75,8 @@ return {
 
 		-- You can add more start-up applications here
 		'nm-applet',--' --no-agent'
-		'mpDris2'
+		'mpDris2',
+        'xinput set-prop "SynPS/2 Synaptics TouchPad" 336 1'
 	},
 
 	-- List of binaries/shell scripts that will execute for a certain task

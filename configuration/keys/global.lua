@@ -310,6 +310,14 @@ local global_keys = awful.util.table.join(
 	),
 	awful.key(
 		{modkey},
+		'c',
+		function()
+			awful.spawn('/home/memo/scripts/cbspells', false)
+		end,
+		{description = 'xclip', group = 'hotkeys'}
+	),
+	awful.key(
+		{modkey},
 		'`',
 		function()
 			awesome.emit_signal('module::quake_terminal:toggle')
